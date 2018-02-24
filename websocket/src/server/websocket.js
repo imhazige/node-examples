@@ -1,47 +1,42 @@
 const log = require('./common/log');
+const WebSocket = require('ws');
 
 const initialize = (server) => {
-    var ioserver = require('socket.io')(server, {
-        path: '/socket'
+    const wss = new WebSocket.Server({
+        server
     });
 
-    //connect to echo test
-    const io = require('socket.io-client');
-    const socket = io('echo.websocket.org', {
-        path: null,
-        transports: ['websocket'],
-        autoConnect: false
+    wss.on('connection', function connection(ws, req) {
+        const location = url.parse(req.url, true);
+        // You might use location.query.access_token to authenticate or share sessions
+        // or req.headers.cookie (see http://stackoverflow.com/a/16395220/151312)
+
+        ws.on('message', function incoming(message) {
+            log.debug('received: %s', message);
+        });
+
+        ws.send('something');
     });
 
-    socket.on('disconnect', () => {
-        log.warn('disconneced..., reconnect...');
-        socket.open();
+    const ws = new WebSocket('wss://echo.websocket.org/', {
+        origin: 'https://websocket.org'
     });
 
-    socket.on('ping', () => {
-        log.debug('ping');
+    ws.on('open', function open() {
+        log.debug('connected');
+        ws.send(Date.now());
     });
 
-    socket.on('connect', () => {
-        log.warn('connected');
+    ws.on('close', function close() {
+        log.debug('disconnected');
     });
 
-    socket.on('connect_error', (error) => {
-        log.error('connect_error', error);
-    });
+    ws.on('message', function incoming(data) {
+        log.debug(`Roundtrip time: ${Date.now() - data} ms`);
 
-    socket.on('connect_timeout', (timeout) => {
-        log.error('connect_timeout', timeout);
-    });
-
-    socket.on('error', (error) => {
-        log.error('error', error);
-    });
-
-    socket.open();
-
-    ioserver.on('connection', function () {
-
+        setTimeout(function timeout() {
+            ws.send(Date.now());
+        }, 500);
     });
 };
 
