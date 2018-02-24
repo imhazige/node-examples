@@ -1,0 +1,39 @@
+{
+  "name": "express-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "mocha",
+    "dev": "nodemon  --inspect src/server/app.js",
+    "start": "node src/server/app.js",
+    "pretest": "eslint ."
+  },
+  "author": "Ka",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.0",
+    "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "log4js": "^2.4.1",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "mocha": "^4.1.0",
+    "nodemon": "^1.14.11",
+    "supertest": "^3.0.0"
+  },
+  "eslintConfig": {
+    "plugins": [],
+    "env": {},
+    "rules": {
+      "eqeqeq": "off",
+      "curly": "error"
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
+  }
+}
