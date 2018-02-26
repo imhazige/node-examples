@@ -25,12 +25,16 @@ https://stackoverflow.com/questions/5510537/websocket-library-for-browsers
 
 
 
-
-
 Client:
 develop:
 use proxy to access express server
 proxy also work with websocket protocol
 
+## How To Run
+### Server
+npm run dev
 
+### Client
+cd src/client
+npm start
 

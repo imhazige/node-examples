@@ -45,9 +45,9 @@ class App extends Component {
       });
 
       //raw websocket
-      // Create WebSocket connection.
-      // const socketRaw = new WebSocket('ws://localhost:8080');
-      // this.opensocket(socketRaw,'raw socket');
+    // Create WebSocket connection.
+    const socketRaw = new WebSocket('ws://localhost:8080');
+    this.opensocket(socketRaw, 'raw socket');
 
     const sock = new SockJS('/sockjs');
     this.opensocket(sock, ' socketjs');
