@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import SockJS from 'sockjs-client';
+import io from 'socket.io-client';
 
 
 class App extends Component {
@@ -45,11 +46,29 @@ class App extends Component {
 
       //raw websocket
       // Create WebSocket connection.
-      const socketRaw = new WebSocket('ws://localhost:8080');
-      this.opensocket(socketRaw,'raw socket');
+      // const socketRaw = new WebSocket('ws://localhost:8080');
+      // this.opensocket(socketRaw,'raw socket');
 
-      const sock = new SockJS('/sockjs');
-      this.opensocket(sock,' socketjs');
+    const sock = new SockJS('/sockjs');
+    this.opensocket(sock, ' socketjs');
+
+    //socket io have a diffrent api
+    const sio = io('http://localhost:8080',{path:'notwork'});
+    // this.opensocket(sockio,' socket-io');
+    sio.on('connect', (data) => {
+      console.log('sockio' + data);
+    });
+
+    sio.on('open', (data) => {
+      sio.send('socketio');
+    });
+
+    sio.on('error', (error) => {
+      console.log('----error', error);
+    });
+
+    // sio.send('socketio');
+    // sio.emit('socketio---','ddd');
   };
 
   render() {
