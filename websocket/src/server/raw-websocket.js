@@ -38,11 +38,7 @@ const initialize = (server) => {
     });
 
     ws.on('message', function incoming(data) {
-        // log.debug(`Roundtrip time: ${Date.now() - data} ms`);
-
-        setTimeout(function timeout() {
-            ws.send(Date.now());
-        }, 500);
+        ws.send('raw response >> ' + data);        
     });
 };
 

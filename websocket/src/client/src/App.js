@@ -13,71 +13,99 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      logs: ''
+      logs: '',
+      inputMsg:''
     };
     this.done();
   }
 
   opensocket = (sock,hello)=>{
-      sock.onopen = function() {
-          console.log('open');
+      sock.onopen = ()=> {
+        this.log(hello + ' open');
           sock.send(hello);
       };
      
-      sock.onmessage = function(e) {
-          console.log('message', e.data);
-          sock.close();
+      sock.onmessage = (e)=> {
+        this.log(hello + ' message ' +  e.data);
+          // sock.close();
       };
      
-      sock.onclose = function() {
-          console.log('close');
+      sock.onclose = ()=> {
+        this.log(hello + ' close');
       };
+  };
+
+  log = (l) =>{
+    console.log(l);
+    this.setState((prevState,props) => {
+      return {logs: prevState.logs + '\n' + l};
+    });
   };
 
   done = () => {
     //test proxy http get
     axios.get('/hello')
-      .then(function (response) {
-        console.log('hello request',response);
+      .then( (response)=> {
+        this.log('hello request',response);
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch( (error)=> {
+        this.log(error);
       });
 
       //raw websocket
     // Create WebSocket connection.
-    const socketRaw = new WebSocket('ws://localhost:8080');
+    var socketRaw = this.socketRaw = new WebSocket('ws://localhost:8080');
     this.opensocket(socketRaw, 'raw socket');
 
-    const sock = new SockJS('/sockjs');
+    var sock = this.sock  = new SockJS('/sockjs');
     this.opensocket(sock, ' socketjs');
 
     //socket io have a diffrent api
-    const sio = io();
+    var sio = this.sio = io();
     // const sio = io('http://localhost:3000'); //it also work
     // const sio = io('http://localhost:3000',{path:'notwork'}); //did not worl, path did not work
     sio.on('connect', (data) => {
-      console.log('sockio connected' ,  data);
+      this.log('sockio connected' ,  data);
       sio.send('socketio');
     });
 
     sio.on('message', (data) => {
-      console.log('sockio data' + data);
+      
+      this.log('sockio data' + data);
     });
 
     sio.on('error', (error) => {
-      console.log('----error', error);
+      this.log('----error', error);
+    });
+
+    sio.on('close', (error) => {
+      this.log('io close');
     });
 
     // sio.send('socketio');
     // sio.emit('socketio---','ddd');
   };
 
+  handleChange = (e) => {
+    // console.log('dddd',e.target.value);
+    let v = e.target.value;
+    this.setState((pre,props)=>{
+      return {inputMsg:v};
+    });
+  };
+
+  handleSend = () => {
+    let s = this.state.inputMsg;
+    this.socketRaw.send(s);
+    this.sock.send(s);
+    this.sio.send(s);
+  };
+
   render() {
     return (
       <div className = "App" >
-      Send Message: <input />
-      <button> Send </button><br/>
+      Send Message: <input onChange={this.handleChange} />
+      <button type="button" onClick={this.handleSend} > Send </button><br/>
       Logs: <textarea columns = "40"
       rows = "30"
       value = {
