@@ -15,12 +15,12 @@ app.use('/hello',function (req, res) {
 
 const server = http.createServer(app);
 //raw
-// const ws = require('./raw-websocket')
-// ws.initialize(server);
+const ws = require('./raw-websocket')
+ws.initialize(server);
 
 //sockjs
-// const sockjs = require('./sockjs-websocket');
-// sockjs.initialize(server);
+const sockjs = require('./sockjs-websocket');
+sockjs.initialize(server);
 
 //socket.io
 const sockio = require('./sockio-websocket');

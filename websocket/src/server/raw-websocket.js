@@ -15,7 +15,7 @@ const initialize = (server) => {
         log.debug('ws new connection  start..');
         ws.on('message', function incoming(message) {
             log.debug('received: %s', message);
-            ws.send('ws response -- ' + message);
+            ws.send('ws response >> ' + message);
         });
     });
 

@@ -5,7 +5,7 @@ const initialize = (server) => {
 
 
   const io = require('socket.io')(server, {
-    // path: '/notwork'
+    // path: '/socketio' //path did not work
     // serveClient: false,
     // below are engine.IO options
     // pingInterval: 10000,
@@ -13,13 +13,13 @@ const initialize = (server) => {
     // cookie: false
   });
 
-  io.on('connection', function(socket){
+  io.on('connection', function (socket) {
     console.log('socket-io new connection');
     socket.on('message', function (data) {
       // console.log('on message' + data);
       socket.send('socketid response >> ' + data);
     });
-    
+
   });
 };
 

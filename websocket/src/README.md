@@ -7,7 +7,7 @@ socket.io and sockjs are all implements a weird, arbitrary layer over the WebSoc
 ## Server:
 sockjs https://github.com/sockjs/sockjs-node  
 raw websocket server https://github.com/websockets/ws   
-socket.io https://github.com/socketio/socket.io (did not work, no error, no request)
+socket.io https://github.com/socketio/socket.io (did not work, no error, no request if use path option, the api is not good)
 
 ## Client(Node.js)
 https://github.com/websockets/ws  
@@ -15,8 +15,8 @@ Server connect to [Echo test](ws://echo.websocket.org) see http://websocket.org/
 
 ## Client(Browser):
 HTML5    https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/dev-guides/hh673567(v=vs.85)
-https://github.com/sockjs/sockjs-client  
-https://github.com/socketio/socket.io-client (did not work)
+https://github.com/sockjs/sockjs-client   
+https://github.com/socketio/socket.io-client (the path option did not work)
 
 
 

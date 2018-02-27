@@ -46,16 +46,16 @@ class App extends Component {
 
       //raw websocket
     // Create WebSocket connection.
-    // const socketRaw = new WebSocket('ws://localhost:8080');
-    // this.opensocket(socketRaw, 'raw socket');
+    const socketRaw = new WebSocket('ws://localhost:8080');
+    this.opensocket(socketRaw, 'raw socket');
 
-    // const sock = new SockJS('/sockjs');
-    // this.opensocket(sock, ' socketjs');
+    const sock = new SockJS('/sockjs');
+    this.opensocket(sock, ' socketjs');
 
     //socket io have a diffrent api
-    // const sio = io();
-    const sio = io('http://localhost:3000');
-    // this.opensocket(sockio,' socket-io');
+    const sio = io();
+    // const sio = io('http://localhost:3000'); //it also work
+    // const sio = io('http://localhost:3000',{path:'notwork'}); //did not worl, path did not work
     sio.on('connect', (data) => {
       console.log('sockio connected' ,  data);
       sio.send('socketio');
