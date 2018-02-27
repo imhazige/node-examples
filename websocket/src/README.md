@@ -5,17 +5,17 @@ socket.io and sockjs are all implements a weird, arbitrary layer over the WebSoc
 
 
 ## Server:
-sockjs https://github.com/sockjs/sockjs-node
-raw websocket server https://github.com/websockets/ws
+sockjs https://github.com/sockjs/sockjs-node  
+raw websocket server https://github.com/websockets/ws   
 socket.io https://github.com/socketio/socket.io (did not work, no error, no request)
 
 ## Client(Node.js)
-https://github.com/websockets/ws
-Server connect to [Echo test](ws://echo.websocket.org) see http://websocket.org/echo.html
+https://github.com/websockets/ws  
+Server connect to [Echo test](ws://echo.websocket.org) see http://websocket.org/echo.html  
 
 ## Client(Browser):
-HTML5 https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/dev-guides/hh673567(v=vs.85)
-https://github.com/sockjs/sockjs-client
+HTML5    https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/dev-guides/hh673567(v=vs.85)
+https://github.com/sockjs/sockjs-client  
 https://github.com/socketio/socket.io-client (did not work)
 
 
@@ -25,16 +25,16 @@ https://stackoverflow.com/questions/5510537/websocket-library-for-browsers
 
 
 
-Client:
-develop:
-use proxy to access express server
-proxy also work with websocket protocol
+## Client:  
+### develop:  
+use proxy to access express server  
+proxy also work with websocket protocol  
 
 ## How To Run
-### Server
-npm run dev
+### Server  
+npm run dev  
 
-### Client
-cd src/client
-npm start
+### Client  
+cd src/client  
+npm start  
 

@@ -3,8 +3,9 @@ const url = require('url');
 
 const initialize = (server) => {
 
+
   const io = require('socket.io')(server, {
-    path: '/notwork'
+    // path: '/notwork'
     // serveClient: false,
     // below are engine.IO options
     // pingInterval: 10000,
@@ -15,8 +16,8 @@ const initialize = (server) => {
   io.on('connection', function(socket){
     console.log('socket-io new connection');
     socket.on('message', function (data) {
-      console.log(data);
-      socket.emit('socketid response >> ' + data);
+      // console.log('on message' + data);
+      socket.send('socketid response >> ' + data);
     });
     
   });
