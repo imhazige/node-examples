@@ -1,0 +1,28 @@
+{
+  "name": "nextjs_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon  --inspect ./src/app.js"
+  },
+  "keywords": [
+    "next.js",
+    "express.js"
+  ],
+  "author": "Ka",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "helmet": "^3.12.0",
+    "next": "^5.1.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "winston": "^3.0.0-rc1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

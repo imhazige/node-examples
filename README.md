@@ -47,6 +47,10 @@ cd src/client
 npm start  
 ```
 
+## [Next.js with Expressjs](./nextjs_express)
+Server side rendering by [next.js](https://github.com/zeit/next.js) associating with expressjs  
+using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/)
+
 
 ## [Miscellaneous Examples](./misc_examples)
 
