@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon  --inspect ./src/app.js"
+    "dev": "nodemon  --inspect ./src/app.js",
+    "build": "cross-env NODE_ENV=production next build",
+    "start": "cross-env NODE_ENV=production node ./src/app.js"
   },
   "keywords": [
     "next.js",
@@ -23,6 +30,7 @@
     "winston": "^3.0.0-rc1"
   },
   "devDependencies": {
+    "cross-env": "^5.1.4",
     "nodemon": "^1.17.3"
   }
 }

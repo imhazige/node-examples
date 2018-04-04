@@ -3,16 +3,20 @@ const compression = require('compression');
 const helmet = require('helmet');
 const next = require('next');
 
-const logger = require('./log');
-const api = require('./api');
+const logger = require('./src/log');
+const api = require('./src/api');
 
 const dev = process.env.NODE_ENV !== 'production';
 
 const port = process.env.PORT || 8080;
 
+logger.info('dev is ' + dev);
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const URL_MAP = {
+    '/login': '/public/login'
+  };
 
 app.prepare().then(() => {
     const server = express();
@@ -36,6 +40,15 @@ app.prepare().then(() => {
         server.set('trust proxy', 1); // trust first proxy
         sess.cookie.secure = true; // serve secure cookies
     }
+
+    server.get('*', (req, res) => {
+        const url = URL_MAP[req.path];
+        if (url) {
+            app.render(req, res, url);
+        } else {
+            handle(req, res);
+        }
+    });
 
     server.listen(port, (err) => {
         if (err) throw err;
