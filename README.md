@@ -58,6 +58,11 @@ I have the problem as same as [nextjs custom server build size is too big
 
 so for now, I will not update the example until there are more progress of the popularity of the next.
 
+## [Nuxt with Expressjs](./nuxt_express)
+Server side rendering by [next.js](https://github.com/nuxt/nuxt.js) associating with expressjs   
+using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/)  
+create with template[express-template](https://github.com/nuxt-community/express-template)  
+it works terrificly.
 
 
 ## [Miscellaneous Examples](./misc_examples)
