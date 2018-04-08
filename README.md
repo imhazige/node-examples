@@ -50,6 +50,14 @@ npm start
 ## [Next.js with Expressjs](./nextjs_express)
 Server side rendering by [next.js](https://github.com/zeit/next.js) associating with expressjs  
 using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/)
+### The Problem
+I have the problem as same as [nextjs custom server build size is too big
+](https://stackoverflow.com/questions/48572022/nextjs-custom-server-build-size-is-too-big)
+- after ```npm build```, then ```npm start``` which with NODE_ENV = production, the main.js is still 1.2M, and there are hot reloading, it seems the production env did not work.
+- there are not much resource to find the answer to eresolve the problem.  
+
+so for now, I will not update the example until there are more progress of the popularity of the next.
+
 
 
 ## [Miscellaneous Examples](./misc_examples)
