@@ -1,36 +1,16 @@
 {
-  "name": "nextjs_express",
+  "name": "custom-server-express",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ]
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon  --inspect ./src/app.js",
-    "build": "cross-env NODE_ENV=production next build",
-    "start": "cross-env NODE_ENV=production node ./src/app.js"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "startWin": "set NODE_ENV=production && node server.js"
   },
-  "keywords": [
-    "next.js",
-    "express.js"
-  ],
-  "author": "Ka",
-  "license": "MIT",
   "dependencies": {
-    "compression": "^1.7.2",
-    "express": "^4.16.3",
-    "helmet": "^3.12.0",
-    "next": "^5.1.0",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "winston": "^3.0.0-rc1"
-  },
-  "devDependencies": {
-    "cross-env": "^5.1.4",
-    "nodemon": "^1.17.3"
+    "express": "^4.14.0",
+    "next": "5.1.0",
+    "react": "16.3.1",
+    "react-dom": "16.3.1"
   }
 }
