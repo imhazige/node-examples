@@ -9,13 +9,18 @@
         <nuxt-link :to="{ name: 'id', params: { id: index }}">
           {{ user.name }} --
         </nuxt-link>
+        
       </li>
+      <nuxt-link to="/admin-lite">
+         Admin --
+        </nuxt-link>
     </ul>
   </section>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+// import ''
 
 export default {
   async asyncData () {
@@ -29,6 +34,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 .title
