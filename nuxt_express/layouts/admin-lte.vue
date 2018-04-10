@@ -55,6 +55,8 @@ export default {
 </script>
 
 <style src="bootstrap/dist/css/bootstrap.css"></style>
+<style src="font-awesome/css/font-awesome.css"></style>
+<style src="ionicons/dist/css/ionicons.css"></style>
 <style src="admin-lte/dist/css/AdminLTE.css"></style>
 <style src="admin-lte/dist/css/skins/skin-blue.min.css"></style>
 <style src="~/assets/css/googlefont1.css"></style>

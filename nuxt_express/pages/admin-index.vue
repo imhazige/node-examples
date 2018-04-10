@@ -1,6 +1,6 @@
 <template>
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper content-custom">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -51,6 +51,11 @@ export default {
   layout: 'admin-lte'
 };
 </script>
+<style scoped>
+.content-custom{
+  min-height: calc(100% - 120px);
+}
+</style>
 
 
 
