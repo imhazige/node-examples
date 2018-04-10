@@ -10,17 +10,25 @@
             </a>
 
             <NavBar />
-          </header>  
+          </header>
+
+          <SideBar />  
           <nuxt/>
+
+          <Footer/>
     </div> 
 </template>
 
 <script>
 import NavBar from "~/components/NavBar.vue";
+import SideBar from "~/components/SideBar.vue";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    SideBar,
+    Footer
   },
 
   //see https://nuxtjs.org/api/pages-head
