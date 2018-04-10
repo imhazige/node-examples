@@ -47,6 +47,15 @@ cd src/client
 npm start  
 ```
 
+## [Nuxt with Expressjs](./nuxt_express)
+Server side rendering by [next.js](https://github.com/nuxt/nuxt.js) associating with expressjs   
+using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/) which depend on [bootstrap@3](https://getbootstrap.com/) and [jquery](https://jquery.com/)  
+create with template[express-template](https://github.com/nuxt-community/express-template)  
+it works much better than next.js and have better document for now. But..., still a tentative way to me. Have not much confidence to use it in real production.
+### how to run
+go the folder, run ```npm install``` then run ```npm run dev```
+![](./nuxt-admin-lte.png)
+
 ## [Next.js with Expressjs](./nextjs_express)
 Server side rendering by [next.js](https://github.com/zeit/next.js) associating with expressjs  
 using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/)
@@ -57,13 +66,6 @@ I have the problem as same as [nextjs custom server build size is too big
 - there are not much resource to find the answer to eresolve the problem.  
 
 so for now, I will not update the example until there are more progress of the popularity of the next.
-
-## [Nuxt with Expressjs](./nuxt_express)
-Server side rendering by [next.js](https://github.com/nuxt/nuxt.js) associating with expressjs   
-using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/)  
-create with template[express-template](https://github.com/nuxt-community/express-template)  
-it works terrificly.
-
 
 ## [Miscellaneous Examples](./misc_examples)
 

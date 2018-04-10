@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 module.exports = {
   /*
   ** Headers of the page
@@ -21,7 +22,16 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
+    //see https://github.com/nuxt/nuxt.js/issues/178
+    vendor: ['axios','jquery', 'bootstrap'],
+    plugins: [
+      // set shortcuts as global for bootstrap
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ],
     /*
     ** Run ESLINT on save
     */
