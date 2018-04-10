@@ -11,7 +11,7 @@
         </nuxt-link>
         
       </li>
-      <nuxt-link to="/admin-lite">
+      <nuxt-link to="/admin-index">
          Admin --
         </nuxt-link>
     </ul>

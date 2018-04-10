@@ -16,7 +16,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/main.css'],
+  css: ['admin-lte/dist/css/AdminLTE.css'],
   /*
   ** Add axios globally
   */
