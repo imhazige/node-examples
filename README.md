@@ -52,6 +52,8 @@ Server side rendering by [next.js](https://github.com/nuxt/nuxt.js) associating 
 using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/) which depend on [bootstrap@3](https://getbootstrap.com/) and [jquery](https://jquery.com/)  
 create with template[express-template](https://github.com/nuxt-community/express-template)  
 it works much better than next.js and have better document for now. But..., still a tentative way to me. Have not much confidence to use it in real production.
+### problems:
+- the eslint --fix did not fix the error, so I ignore all the source  in the .eslintignore
 ### how to run
 go the folder, run ```npm install``` then run ```npm run dev```
 ![](./nuxt-admin-lte.png)
