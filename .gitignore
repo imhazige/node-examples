@@ -1,3 +1,4 @@
 websocket/node_modules/
 *.log
 nextjs_express/.next/
+**/node_modules/
