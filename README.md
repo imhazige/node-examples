@@ -69,6 +69,8 @@ I have the problem as same as [nextjs custom server build size is too big
 
 so for now, I will not update the example until there are more progress of the popularity of the next.
 
+## [Meteor Examples](./meteor)
+
 ## [Miscellaneous Examples](./misc_examples)
 
 ### module cycle require

@@ -1,0 +1,2 @@
+- going to use user feature
+- going to use apollo with postgress with real data fetching
