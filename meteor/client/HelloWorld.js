@@ -8,7 +8,10 @@ export default class HelloWorld extends React.Component {
         {/* root */}
         <a href={FlowRouter.path('App.home')}>Home</a>
         <br />
-        {/* login with native ui */}
+        {/* pubsub1 */}
+        <a href={FlowRouter.path('Test.pubsub1')}>Pubsub1</a>
+        {/* <br />
+        login with native ui
         <a
           href={FlowRouter.path(
             'Login.UIAccountsBootstrap',
@@ -20,9 +23,9 @@ export default class HelloWorld extends React.Component {
         >
           Login With accounts-bootstrap
         </a>
-        <br />
+        <br /> */}
         {/* tests */}
-        <a
+        {/* <a
           href={FlowRouter.path(
             'Test.ReactRender',
             {},
@@ -32,7 +35,7 @@ export default class HelloWorld extends React.Component {
           )}
         >
           Tests-Render React
-        </a>
+        </a> */}
       </>
     );
   }

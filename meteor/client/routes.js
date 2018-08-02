@@ -1,7 +1,6 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
-import './layout.js';
+// import './layout.js';
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -9,20 +8,21 @@ import { render } from 'react-dom';
 FlowRouter.route('/', {
   name: 'App.home',
   action() {
-    import('../imports/login-native/client/login.js').then(m => {
-      BlazeLayout.render('My_Content', { main: 'Login.UIAccountsBootstrap' });
+    import('./HelloWorld').then(m => {
+      const COMP = m.default;
+      render(<COMP />, document.getElementById('app'));
     });
   }
 });
 
-FlowRouter.route('/login/native', {
-  name: 'Login.UIAccountsBootstrap',
-  action(params, queryParams) {
-    import('../imports/login-native/client/login.js').then(m => {
-      BlazeLayout.render('My_Content', { main: 'Login.UIAccountsBootstrap' });
-    });
-  }
-});
+// FlowRouter.route('/login/native', {
+//   name: 'Login.UIAccountsBootstrap',
+//   action(params, queryParams) {
+//     import('../imports/login-native/client/login.js').then(m => {
+//       BlazeLayout.render('My_Content', { main: 'Login.UIAccountsBootstrap' });
+//     });
+//   }
+// });
 
 /**
  * this is not a correct way. look at the layout, we should not mix layout and react render.
@@ -33,16 +33,31 @@ FlowRouter.route('/login/native', {
  * child of the layout
  *
  */
-FlowRouter.route('/test/reactrender', {
-  name: 'Test.ReactRender',
+// FlowRouter.route('/test/reactrender', {
+//   name: 'Test.ReactRender',
+//   action(params, queryParams) {
+//     // BlazeLayout.render('My_Content', { main: 'Login.UIAccountsBootstrap' });
+//     import('./HelloWorld').then(m => {
+//       const COMP = m.default;
+//       document.title = '哈哈';
+
+//       render(<COMP />, document.getElementById('app'));
+//     });
+//     // COMP = require('./HelloWorld').default;
+//   }
+// });
+
+/**
+ * keep in mind, can not use variable in dynamic import
+ */
+FlowRouter.route('/pubsub1', {
+  name: 'Test.pubsub1',
   action(params, queryParams) {
-    // BlazeLayout.render('My_Content', { main: 'Login.UIAccountsBootstrap' });
-    import('./HelloWorld').then(m => {
+    import('../imports/pubsub1/client/pubsub1').then(m => {
       const COMP = m.default;
-      document.title = '哈哈';
+      document.title = '';
 
       render(<COMP />, document.getElementById('app'));
     });
-    // COMP = require('./HelloWorld').default;
   }
 });
