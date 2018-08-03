@@ -27,7 +27,10 @@ export const mylistupdate = new ValidatedMethod({
   //   }),
   validate: null,
   run({ name, value }) {
+    // name = '--';
     console.log('-----------', name, value);
+    const t = MyList.findOne({ name: 'pubsub1-count' });
+    console.log('>>res---', t);
     MyList.upsert(
       { name },
       {

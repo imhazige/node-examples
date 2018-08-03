@@ -2,6 +2,7 @@
  * low level subscribe without tracker
  */
 
+import { Meteor } from 'meteor/meteor';
 import React from 'react';
 
 import { Session } from 'meteor/session';
@@ -45,14 +46,16 @@ export default class Comp extends React.Component {
           }
         }
       );
+    });
 
+    Meteor.setInterval(() => {
       //here do the trick, makde it in the autorun, will execute when change happen
       const o = MyList.findOne({ name: countName });
       if (o) {
         console.log('do----');
         that.setState({ count: o.value });
       }
-    });
+    }, 1000);
   }
 
   onClick = () => {

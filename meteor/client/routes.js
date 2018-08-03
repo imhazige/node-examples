@@ -1,9 +1,8 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { render } from 'react-dom';
+import React from 'react';
 
 // import './layout.js';
-
-import React from 'react';
-import { render } from 'react-dom';
 
 FlowRouter.route('/', {
   name: 'App.home',
@@ -54,6 +53,18 @@ FlowRouter.route('/pubsub1', {
   name: 'Test.pubsub1',
   action(params, queryParams) {
     import('../imports/pubsub1/client/pubsub1').then(m => {
+      const COMP = m.default;
+      document.title = '';
+
+      render(<COMP />, document.getElementById('app'));
+    });
+  }
+});
+
+FlowRouter.route('/pubsub2', {
+  name: 'Test.pubsub2',
+  action(params, queryParams) {
+    import('../imports/pubsub2/client/pubsub2').then(m => {
       const COMP = m.default;
       document.title = '';
 
