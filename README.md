@@ -71,13 +71,13 @@ so for now, I will not update the example until there are more progress of the p
 
 ## [Meteor Examples](./meteor)  
 ### Collections and pub/sub methods  
-#### [pubsub1](/imports/pubsub1/client/pubsub1.js)  
+#### [pubsub1](./meteor/imports/pubsub1/client/pubsub1.js)  
 subscribe to mongolist, render with react and Tracker.autorun.  
 use methods to update.
-#### [pubsub2](/imports/pubsub2/client/pubsub2.js)  
+#### [pubsub2](./meteor/imports/pubsub2/client/pubsub2.js)  
 subscribe to mongolist, render with withtrack.  
 use methods to update.  
-#### [pubsub1](/imports/pubsub3/client/pubsub3.js)  
+#### [pubsub3](./meteor/imports/pubsub3/client/pubsub3.js)  
 subscribe to customer collection, which actually is a local collection  
 
 ### Conclusion  
