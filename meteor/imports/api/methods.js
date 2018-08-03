@@ -3,6 +3,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { _ } from 'meteor/underscore';
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter';
 import SimpleSchema from 'simpl-schema';
+import './methods-accounts';
 
 // export const mylistupdate = Meteor.methods({
 //   'mylist.update'({ name, value }) {

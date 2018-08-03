@@ -84,3 +84,15 @@ FlowRouter.route('/pubsub3', {
     });
   }
 });
+
+FlowRouter.route('/newuser', {
+  name: 'Test.newuser',
+  action(params, queryParams) {
+    import('../imports/ui/account1/newuser').then(m => {
+      const COMP = m.default;
+      document.title = '';
+
+      render(<COMP />, document.getElementById('app'));
+    });
+  }
+});

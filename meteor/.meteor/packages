@@ -33,3 +33,4 @@ mdg:validation-error
 ddp-rate-limiter
 
 react-meteor-data
+accounts-password

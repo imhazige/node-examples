@@ -19,6 +19,9 @@ export default class HelloWorld extends React.Component {
         {/* pubsub3 */}
         <a href={FlowRouter.path('Test.pubsub3')}>Pubsub3</a>
 
+        <br />
+        {/* newuser */}
+        <a href={FlowRouter.path('Test.newuser')}>Newuser</a>
         {/* <br />
         login with native ui
         <a
