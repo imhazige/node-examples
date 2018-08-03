@@ -11,7 +11,7 @@
     "@babel/runtime": "^7.0.0-beta.51",
     "bcrypt": "^3.0.0",
     "meteor-node-stubs": "^0.4.1",
-    "react": "^16.4.1",
+    "react": "^16.4.2",
     "react-dom": "^16.4.1",
     "simpl-schema": "^1.5.3"
   },

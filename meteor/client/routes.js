@@ -72,3 +72,15 @@ FlowRouter.route('/pubsub2', {
     });
   }
 });
+
+FlowRouter.route('/pubsub3', {
+  name: 'Test.pubsub3',
+  action(params, queryParams) {
+    import('../imports/pubsub3/client/pubsub3').then(m => {
+      const COMP = m.default;
+      document.title = '';
+
+      render(<COMP />, document.getElementById('app'));
+    });
+  }
+});
