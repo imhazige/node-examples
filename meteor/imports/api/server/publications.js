@@ -31,6 +31,8 @@ const h = Meteor.publish('publish3', function() {
   // this will only affect this collection ONLY.
   // will not share the data, like many local collection with the same
   //collection name
+  //of course, we can use a database to fetch data and send to the per-connection local collection
+  //but why do that over using a mongodb collection?
   this.added('publish3.conllection', id, { f1: id });
 
   // We can call ready to indicate to the client that the initial document sent has been sent
