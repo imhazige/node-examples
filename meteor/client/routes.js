@@ -96,3 +96,15 @@ FlowRouter.route('/newuser', {
     });
   }
 });
+
+FlowRouter.route('/login', {
+  name: 'Test.login',
+  action(params, queryParams) {
+    import('../imports/ui/account1/login').then(m => {
+      const COMP = m.default;
+      document.title = '';
+
+      render(<COMP />, document.getElementById('app'));
+    });
+  }
+});

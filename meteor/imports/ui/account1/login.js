@@ -1,7 +1,6 @@
 /**
- * this code showes how to use method to create a new user
+ * this code showes how to login on client side
  */
-
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 
@@ -17,22 +16,17 @@ export default class Comp extends React.Component {
   }
   onClick = () => {
     const that = this;
-    //update the collection buy method
-    accountMethod.newuser.call(
-      {
-        email: that.state.email,
-        password: that.state.password
-      },
-      (err, res) => {
-        if (err) {
-          console.error(err);
-        } else {
-          // success!
-          console.log('method response', res, Meteor.userId());
-          // redirect
-        }
+    //see https://docs.meteor.com/api/accounts.html#Meteor-loginWithPassword
+    //this is a client only function
+    Meteor.loginWithPassword(that.state.email, that.state.password, err => {
+      if (err) {
+        alert(err.message);
+        return;
+      } else {
+        //redirect
+        console.log('logined', Meteor.userId());
       }
-    );
+    });
 
     //why here have to return false to avoid submit?
     return false;
@@ -42,7 +36,7 @@ export default class Comp extends React.Component {
       <BootrstrapPage>
         <form>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">New User Email address</label>
+            <label htmlFor="exampleInputEmail1">Email address</label>
             <input
               onChange={e => {
                 this.setState({ email: e.target.value });
@@ -77,8 +71,9 @@ export default class Comp extends React.Component {
             onClick={this.onClick}
             className="btn btn-primary"
           >
-            Submit
+            Login
           </button>
+          <a href={FlowRouter.path('Test.newuser')}>register a new user</a>
         </form>
       </BootrstrapPage>
     );

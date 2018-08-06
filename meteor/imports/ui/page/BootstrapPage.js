@@ -1,3 +1,7 @@
+/**
+ * import bootstrap4 resource, any component/page/layout depend on bootstrap can be a child of this
+ * component to import the bootstrap4, the CDN is in china.
+ */
 import React from 'react';
 
 export default class BootrstrapPage extends React.Component {
