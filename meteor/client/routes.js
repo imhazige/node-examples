@@ -108,3 +108,15 @@ FlowRouter.route('/login', {
     });
   }
 });
+
+FlowRouter.route('/dashboard', {
+  name: 'Test.dashboard',
+  action(params, queryParams) {
+    import('../imports/ui/dashboard/main').then(m => {
+      const COMP = m.default;
+      document.title = '';
+
+      render(<COMP />, document.getElementById('app'));
+    });
+  }
+});

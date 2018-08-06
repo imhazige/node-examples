@@ -2,3 +2,7 @@ websocket/node_modules/
 *.log
 nextjs_express/.next/
 **/node_modules/
+meteor/public/material/assets/scss/
+meteor/public/material/examples/
+meteor/public/material/docs/documentation.html
+meteor/public/material/assets/github/

@@ -25,6 +25,7 @@ export default class Comp extends React.Component {
       } else {
         //redirect
         console.log('logined', Meteor.userId());
+        FlowRouter.go('Test.dashboard', {});
       }
     });
 
