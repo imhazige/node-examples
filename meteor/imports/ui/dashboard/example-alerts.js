@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BootrstrapPage from '../page/MaterialAdminPageLayout';
-
 export default class Comp extends React.Component {
   render() {
     return (
