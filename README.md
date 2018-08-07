@@ -79,6 +79,13 @@ subscribe to mongolist, render with withtrack.
 use methods to update.  
 #### [pubsub3](./meteor/imports/pubsub3/client/pubsub3.js)  
 subscribe to customer collection, which actually is a local collection  
+### UI and theme
+#### [login](./meteor/imports/ui/account1/login.js)   
+show how to use meteor accounts-password to login
+#### [newuser](./meteor/imports/ui/account1/newuser.js)  
+show how to use meteor accounts-password to create a new user by email and password
+#### [dashboard](./meteor/imports/ui/dashboard/main.js)  
+show how to apply theme layout of [Material Dashboard](https://demos.creative-tim.com/material-dashboard/docs/2.0/getting-started/introduction.html#docs)
 
 ### Conclusion  
 tried local collection without mongodb, it will not publish the change across the connections as each collection
