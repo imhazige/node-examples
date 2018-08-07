@@ -67,6 +67,7 @@ export const trans1 = new ValidatedMethod({
       const dbName = process.env.MONGO_DB_NAME;
 
       // Use connect method to connect to the server
+      // const url = process.env.MONGO_OPLOG_URL;
       const url = process.env.MONGO_URL;
       MongoClient.connect(
         url,
@@ -77,7 +78,7 @@ export const trans1 = new ValidatedMethod({
           const session = client.startSession();
 
           //start transasction
-          session.startTransaction();
+          // session.startTransaction();
           //do update
           // update1(args);
           const result = await update2(args, db, session);
@@ -85,10 +86,10 @@ export const trans1 = new ValidatedMethod({
           // const tr = await session.abortTransaction();
           // console.log('tr', tr);
           if (args.abortTrans) {
-            await session.abortTransaction();
+            // await session.abortTransaction();
             console.log('aborted...');
           } else {
-            await session.commitTransaction();
+            // await session.commitTransaction();
             console.log('commited...');
           }
           client.close();
