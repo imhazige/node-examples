@@ -120,3 +120,17 @@ FlowRouter.route('/dashboard', {
     });
   }
 });
+
+// filtering
+// see https://atmospherejs.com/kadira/flow-router#defining-triggers-globally
+FlowRouter.triggers.enter(
+  [
+    (context) => {
+      // context is the output of `FlowRouter.current()`
+      if (!Meteor.user() && !Meteor.loggingIn()) {
+        FlowRouter.go('Test.login', {});
+      }
+    }
+  ],
+  { only: ['Test.dashboard'] }
+);

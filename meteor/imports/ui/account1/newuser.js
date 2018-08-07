@@ -26,10 +26,12 @@ export default class Comp extends React.Component {
       (err, res) => {
         if (err) {
           console.error(err);
+          alert(err.message);
         } else {
           // success!
           console.log('method response', res, Meteor.userId());
           // redirect
+          FlowRouter.go('Test.login', {});
         }
       }
     );

@@ -6,6 +6,7 @@ import React from 'react';
 
 import BootrstrapPage from '../page/MaterialAdminPageLayout';
 import TestAlerts from './example-alerts';
+import DashBoard from './wholeexample';
 
 export default class Comp extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class Comp extends React.Component {
   render() {
     return (
       <BootrstrapPage>
-        <TestAlerts />
+        <DashBoard />
       </BootrstrapPage>
     );
   }
