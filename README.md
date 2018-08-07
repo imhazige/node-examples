@@ -70,6 +70,9 @@ I have the problem as same as [nextjs custom server build size is too big
 so for now, I will not update the example until there are more progress of the popularity of the next.
 
 ## [Meteor Examples](./meteor)  
+### How to run
+please see the shell [run-dev.sh](./meteor/run-dev.sh), change the environment variable in the shell then run from the meteor project folder
+`bash ./run-dev.sh`
 ### Collections and pub/sub methods  
 #### [pubsub1](./meteor/imports/pubsub1/client/pubsub1.js)  
 subscribe to mongolist, render with react and Tracker.autorun.  
@@ -84,8 +87,12 @@ subscribe to customer collection, which actually is a local collection
 show how to use meteor accounts-password to login
 #### [newuser](./meteor/imports/ui/account1/newuser.js)  
 show how to use meteor accounts-password to create a new user by email and password
-#### [dashboard](./meteor/imports/ui/dashboard/main.js)  
-show how to apply theme layout of [Material Dashboard](https://demos.creative-tim.com/material-dashboard/docs/2.0/getting-started/introduction.html#docs)
+#### [transaction](./meteor/imports/transaction1/client/transaction1.js)  
+show how use mongo dirver 3.1 api to do transaction, it will make the publication know the change, but there will be an obviously time gap and the meteor native collection will not affected by the transaction as they are in another database connection.
+NOTE:as transaction only work in a [replica set(mongo 4.0)](https://docs.mongodb.com/manual/tutorial/deploy-replica-set/). so will have error like [Transaction numbers are only allowed on a replica set member](https://stackoverflow.com/questions/51461952/mongodb-v4-0-transaction-mongoerror-transaction-numbers-are-only-allowed-on-a) when you run in local machine with one mongo node. 
+#### [dashboard](./meteor/imports/ui/dashboard/main.js)   
+show how to apply theme layout of [Material Dashboard](https://demos.creative-tim.com/material-dashboard/docs/2.0/getting-started/introduction.html#docs),
+also show do logout of the account 
 
 ### Conclusion  
 tried local collection without mongodb, it will not publish the change across the connections as each collection

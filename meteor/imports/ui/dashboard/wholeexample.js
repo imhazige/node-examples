@@ -1,12 +1,22 @@
 import React from 'react';
 
 export default class Comp extends React.Component {
+  logOut = () => {
+    Meteor.logout(err => {
+      if (err) {
+        alert(err.message);
+      } else {
+        FlowRouter.go('Test.login');
+      }
+    });
+  };
+
   render() {
     return (
       <div className="wrapper ">
         <div
           className="sidebar"
-          data-color="purple"
+          data-color="azure"
           data-background-color="white"
           data-image="../assets/img/sidebar-1.jpg"
         >
@@ -26,57 +36,30 @@ export default class Comp extends React.Component {
           <div className="sidebar-wrapper">
             <ul className="nav">
               <li className="nav-item active  ">
-                <a className="nav-link" href="./dashboard.html">
+                <a
+                  className="nav-link"
+                  href={FlowRouter.path('Test.dashboard')}
+                >
                   <i className="material-icons">dashboard</i>
                   <p>Dashboard</p>
                 </a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link" href="./user.html">
+                <a
+                  className="nav-link"
+                  href={FlowRouter.path('Test.dashboard')}
+                >
                   <i className="material-icons">person</i>
                   <p>User Profile</p>
                 </a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link" href="./tables.html">
+                <a
+                  className="nav-link"
+                  href={FlowRouter.path('Test.dashboard')}
+                >
                   <i className="material-icons">content_paste</i>
                   <p>Table List</p>
-                </a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link" href="./typography.html">
-                  <i className="material-icons">library_books</i>
-                  <p>Typography</p>
-                </a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link" href="./icons.html">
-                  <i className="material-icons">bubble_chart</i>
-                  <p>Icons</p>
-                </a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link" href="./map.html">
-                  <i className="material-icons">location_ons</i>
-                  <p>Maps</p>
-                </a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link" href="./notifications.html">
-                  <i className="material-icons">notifications</i>
-                  <p>Notifications</p>
-                </a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link" href="./rtl.html">
-                  <i className="material-icons">language</i>
-                  <p>RTL Support</p>
-                </a>
-              </li>
-              <li className="nav-item active-pro ">
-                <a className="nav-link" href="./upgrade.html">
-                  <i className="material-icons">unarchive</i>
-                  <p>Upgrade to PRO</p>
                 </a>
               </li>
             </ul>
@@ -164,9 +147,9 @@ export default class Comp extends React.Component {
                     </div>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#pablo">
-                      <i className="material-icons">person</i>
-                      <p className="d-lg-none d-md-block">Account</p>
+                    <a className="nav-link" href="#pablo" onClick={this.logOut}>
+                      <i className="material-icons">power_settings_new</i>
+                      <p className="d-lg-none d-md-block">Logout</p>
                     </a>
                   </li>
                 </ul>

@@ -4,6 +4,7 @@ import { _ } from 'meteor/underscore';
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter';
 import SimpleSchema from 'simpl-schema';
 import './methods-accounts';
+import './methods-transaction';
 
 // export const mylistupdate = Meteor.methods({
 //   'mylist.update'({ name, value }) {

@@ -20,34 +20,12 @@ export default class HelloWorld extends React.Component {
         <a href={FlowRouter.path('Test.pubsub3')}>Pubsub3</a>
 
         <br />
+        {/* transaction1 */}
+        <a href={FlowRouter.path('Test.trans1')}>Transaction1</a>
+
+        <br />
         {/* newuser */}
         <a href={FlowRouter.path('Test.login')}>Login</a>
-        {/* <br />
-        login with native ui
-        <a
-          href={FlowRouter.path(
-            'Login.UIAccountsBootstrap',
-            {},
-            {
-              q1: 'q1v'
-            }
-          )}
-        >
-          Login With accounts-bootstrap
-        </a>
-        <br /> */}
-        {/* tests */}
-        {/* <a
-          href={FlowRouter.path(
-            'Test.ReactRender',
-            {},
-            {
-              q1: 'q1v'
-            }
-          )}
-        >
-          Tests-Render React
-        </a> */}
       </>
     );
   }

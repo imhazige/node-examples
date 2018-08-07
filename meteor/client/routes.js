@@ -85,6 +85,18 @@ FlowRouter.route('/pubsub3', {
   }
 });
 
+FlowRouter.route('/trans1', {
+  name: 'Test.trans1',
+  action(params, queryParams) {
+    import('../imports/transaction1/client/transaction1').then(m => {
+      const COMP = m.default;
+      document.title = '';
+
+      render(<COMP />, document.getElementById('app'));
+    });
+  }
+});
+
 FlowRouter.route('/newuser', {
   name: 'Test.newuser',
   action(params, queryParams) {
@@ -125,7 +137,7 @@ FlowRouter.route('/dashboard', {
 // see https://atmospherejs.com/kadira/flow-router#defining-triggers-globally
 FlowRouter.triggers.enter(
   [
-    (context) => {
+    context => {
       // context is the output of `FlowRouter.current()`
       if (!Meteor.user() && !Meteor.loggingIn()) {
         FlowRouter.go('Test.login', {});

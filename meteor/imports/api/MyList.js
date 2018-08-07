@@ -3,13 +3,15 @@ import SimpleSchema from 'simpl-schema';
 import { Factory } from 'meteor/dburles:factory';
 import { TAPi18n } from 'meteor/tap:i18n';
 
+export const NAME = 'MyList';
+
 class ListsCollection extends Mongo.Collection {}
 
 //a non-mongo collection, don't use null name, otherwise you can not publish it
 //, and, in this way, this collection update can not published to all the clients
 // export default (Lists = new ListsCollection('MyList', { connection: null }));
 //
-export default (Lists = new ListsCollection('MyList'));
+export default (Lists = new ListsCollection(NAME));
 
 // Deny all client-side updates since we will be using methods to manage this collection
 Lists.deny({
