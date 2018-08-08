@@ -10,6 +10,8 @@ PROJECT_DATA_TMP=D:/work/git/node-examples/meteor/tmp/mongo
 echo $PROJECT_DATA_TMP
 
 # pull docker
-docker pull luamas/docker-mongo-local-replicaset
+# docker pull luamas/docker-mongo-local-replicaset
 
-docker run -d -p 27001:27001 -p 27002:27002 -p 27003:27003 --name mongo -v "":/data -e "REPLICA_SET_NAME=mongo-rs" -e "USERNAME=dev" -e "PASSWORD=dev" --restart=always luamas/docker-mongo-local-replicaset
+# docker run -d -p 27001:27001 -p 27002:27002 -p 27003:27003 --name mongo -v "":/data -e "REPLICA_SET_NAME=mongo-rs" -e "USERNAME=dev" -e "PASSWORD=dev" --restart=always luamas/docker-mongo-local-replicaset
+
+docker run -d -p 27001:27001 -p 27002:27002 -p 27003:27003 --name mongo -v "$PROJECT_DATA_TMP":/data -e "REPLICA_SET_NAME=mongo-rs" -e "USERNAME=dev" -e "PASSWORD=dev" --restart=always mongo:4.1
