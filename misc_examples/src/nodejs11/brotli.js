@@ -61,7 +61,7 @@ async function compressFile2() {
   console.log('done');
 })();
 
-const sleep = ms =>
+const sleep1 = ms =>
   require('child_process').execSync(
     `"${process.argv[0]}" -e "setTimeout(function(){},${ms})"`
   );
@@ -71,6 +71,7 @@ let i = 0;
 // setInterval(() => {
 //   console.log('xxxxxx', i++);
 // }, 5000);
+
 setTimeout(() => {}, 5000);
 // sleep(5000);
 // console.log('aaaa');
