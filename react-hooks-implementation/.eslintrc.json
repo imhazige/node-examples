@@ -6,6 +6,9 @@
     "no-unused-vars": 0,
     "func-names": 0,
     "no-plusplus": 0,
-    "no-return-assign": 0
+    "no-return-assign": 0,
+    "no-console": 0,
+    "import/prefer-default-export": 0,
+    "react/no-deprecated": 0
   }
 }

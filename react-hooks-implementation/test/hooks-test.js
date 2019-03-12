@@ -1,6 +1,5 @@
 import assert from 'assert';
 import { describe, it } from 'mocha';
-import log from '../../common/log';
 import { React } from '..';
 
 describe('Hooks', () => {
@@ -9,7 +8,7 @@ describe('Hooks', () => {
 
     function Counter() {
       const [count, setCount] = React.useState(0);
-      const [text, setText] = React.useState(foo);
+      const [text, setText] = React.useState('foo');
       React.useEffect(() => {
         console.log('effect', count, text);
       }, [count, text]);
