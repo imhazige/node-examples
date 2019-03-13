@@ -171,3 +171,14 @@ go into folder misc_examples\src\nodejs11
 conda activate nodejs11
 node .\brotli.js
 ```
+
+## [Similar Implementation of React Hooks](./react-hooks-implementation)
+
+Inspired by [10 lines implemention of hooks](https://twitter.com/swyx/status/1100833207451185152)
+
+A implementation of Reat Hooks
+
+### Run
+
+`npm install`  
+`npm test`

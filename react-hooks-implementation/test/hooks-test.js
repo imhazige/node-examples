@@ -30,7 +30,7 @@ describe('Hooks', () => {
     App.type('bar');
     App = React.render(Counter);
     // effect 1 bar
-    // {count: I, text: • bar ' }
+    // {count: 1, text: • bar ' }
     App.noop();
     App = React.render(Counter);
     // // no effect run

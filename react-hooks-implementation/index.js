@@ -13,6 +13,11 @@ export const React = (function () {
       // reset for next render
       return App;
     },
+    /**
+     * similar to https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect
+     * @param {*} callback
+     * @param {*} depArray
+     */
     useEffect(callback, depArray) {
       const hasNoDeps = !depArray;
       let deps = hooks[currentHook]; // type: array | undefined
@@ -25,6 +30,10 @@ export const React = (function () {
       }
       currentHook++; // done with this hook
     },
+    /**
+     * similar to https://reactjs.org/docs/hooks-state.html
+     * @param {*} init
+     */
     useState(init) {
       hooks[currentHook] = hooks[currentHook] || init; // type: any
       const setStateHookIndex = currentHook; // for setState's closure!
