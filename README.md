@@ -178,6 +178,8 @@ Inspired by [10 lines implemention of hooks](https://twitter.com/swyx/status/110
 
 A implementation of Reat Hooks
 
+Also include [implementation of Redux](https://repl.it/@dericgw/ReduxRecreated)
+
 ### Run
 
 `npm install`  
