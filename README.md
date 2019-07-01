@@ -49,7 +49,7 @@ npm start
 
 ## [Nuxt with Expressjs](./nuxt_express)
 
-Server side rendering by [next.js](https://github.com/nuxt/nuxt.js) associating with expressjs  
+Server side rendering by [nuxt.js](https://github.com/nuxt/nuxt.js) associating with expressjs  
 using [AdminLTE](https://github.com/almasaeed2010/AdminLTE/) which depend on [bootstrap@3](https://getbootstrap.com/) and [jquery](https://jquery.com/)  
 create with template[express-template](https://github.com/nuxt-community/express-template)  
 it works much better than next.js and have better document for now. But..., still a tentative way to me. Have not much confidence to use it in real production.
@@ -74,7 +74,7 @@ I have the problem as same as [nextjs custom server build size is too big
 ](https://stackoverflow.com/questions/48572022/nextjs-custom-server-build-size-is-too-big)
 
 - after `npm build`, then `npm start` which with NODE_ENV = production, the main.js is still 1.2M, and there are hot reloading, it seems the production env did not work.
-- there are not much resource to find the answer to eresolve the problem.
+- there are not much resource to find the answer to resolve the problem.
 
 so for now, I will not update the example until there are more progress of the popularity of the next.
 
@@ -184,3 +184,9 @@ Also include [implementation of Redux](https://repl.it/@dericgw/ReduxRecreated)
 
 `npm install`  
 `npm test`
+
+## [Graphql Apollo Subscriptions with Vue](./apollo-graphql-subscription-vue)
+
+inspired by https://github.com/Akryum/apollo-server-example
+
+inspired by https://github.com/Akryum/vue-apollo-example
