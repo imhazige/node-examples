@@ -139,6 +139,20 @@ and import:
 
 ## [Miscellaneous Examples](./misc_examples)
 
+### Recursion Solution - Trampoline
+refer to [this article](https://dev.to/pichardoj/do-you-even-recurse-and-if-you-do-do-you-do-it-safely-4mef)
+
+I add a promise case.
+
+#### Run
+go into folder `es6-examples`
+
+```shell
+npm i
+npm start ./trampoline/recursion-single.js 
+```
+
+
 ### module cycle require
 
 refer to this article [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)  
