@@ -4,14 +4,14 @@
  * @param {*} fn
  */
 export function trampoline(fn) {
-  return async function(...args) {
+  return async function (...args) {
     let result = fn(...args);
 
     while (result) {
-      if (typeof result === 'function') {
-        result = result();
-      } else if (typeof result === 'promise') {
+      if (typeof result.then === 'function') {
         result = await result;
+      } else if (typeof result === 'function') {
+        result = result();
       } else {
         break;
       }
