@@ -9,6 +9,7 @@
   "author": "Ka",
   "license": "MIT",
   "dependencies": {
-    "sleep": "^5.2.4"
+    "sleep": "^5.2.4",
+    "stack-trace": "0.0.10"
   }
 }
