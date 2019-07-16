@@ -1,3 +1,8 @@
+/**
+ * inspaired by this article
+ * https://dev.to/pichardoj/do-you-even-recurse-and-if-you-do-do-you-do-it-safely-4mef
+ * @param {*} fn
+ */
 function trampoline(fn) {
   return function(...args) {
     let result = fn(...args);
