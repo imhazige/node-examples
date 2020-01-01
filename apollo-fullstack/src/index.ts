@@ -6,10 +6,10 @@ import isEmail from "isemail";
 import * as types from "./schema";
 import { Request } from "express";
 
-const { createStore } = require("fullstack-tutorial/final/server/src/utils.js");
-const internalEngineDemo = require("fullstack-tutorial/final/server/src/engine-demo");
-const LaunchApi = require("fullstack-tutorial/final/server/src/datasources/launch.js");
-const UserApi = require("fullstack-tutorial/final/server/src/datasources/user.js");
+const { createStore } = require("./fullstack-tutorial/final/server/src/utils.js");
+const internalEngineDemo = require("./fullstack-tutorial/final/server/src/engine-demo");
+const LaunchApi = require("./fullstack-tutorial/final/server/src/datasources/launch.js");
+const UserApi = require("./fullstack-tutorial/final/server/src/datasources/user.js");
 
 const schema = makeSchema({
   types,
