@@ -204,3 +204,11 @@ Also include [implementation of Redux](https://repl.it/@dericgw/ReduxRecreated)
 inspired by https://github.com/Akryum/apollo-server-example
 
 inspired by https://github.com/Akryum/vue-apollo-example
+
+
+## [Graphql - Prisma Nusus](./apollo-fullstack)
+copy from https://github.com/prisma-labs/nexus
+
+## [Graphql - Prisma2 with Apollo](./prisma2-graphql-apollo-server)
+
+copy from https://github.com/prisma/prisma-examples
