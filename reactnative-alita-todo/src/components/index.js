@@ -1,7 +1,7 @@
-import React, {PureComponent} from 'react'
-import {FlatList, StyleSheet, Text, View} from 'react-native'
+import React, { PureComponent } from 'react'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import { toggleTodo } from '../actions'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import AddTodo from './AddTodo'
 import Todo from './Todo'
@@ -12,8 +12,8 @@ class Index extends PureComponent {
 
     LHC = <Text style={styles.header}>TodoList样例列表</Text>
 
-    renderItem = ({item}) => {
-        const {onTodoClick} = this.props
+    renderItem = ({ item }) => {
+        const { onTodoClick } = this.props
         return <Todo
             {...item}
             onClick={() => {
@@ -27,15 +27,16 @@ class Index extends PureComponent {
     }
 
     render() {
-        const { todos }= this.props
+        const { todos } = this.props
 
         return (
             <View
-                style={{flex: 1, padding: 20, paddingBottom: 30, backgroundColor: '#fffffa'}}
+                style={{ flex: 1, padding: 20, paddingBottom: 30, backgroundColor: '#fffffa' }}
             >
-                <AddTodo/>
+                来点自定义
+                <AddTodo />
                 <FlatList
-                    style={{flex: 1}}
+                    style={{ flex: 1 }}
                     keyExtractor={this.keyExtractor}
                     // ListHeaderComponent={this.LHC}
                     // ListEmptyComponent={<View style={styles.empty}><Text>无任务</Text></View>}
@@ -43,7 +44,7 @@ class Index extends PureComponent {
                     renderItem={this.renderItem}
                 />
 
-                <Footer/>
+                <Footer />
             </View>
         )
     }
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     empty: {
         flex: 1,
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems: 'center'
     }
 
 })
