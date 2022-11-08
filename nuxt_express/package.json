@@ -20,7 +20,7 @@
     "font-awesome": "^4.7.0",
     "ionicons": "^3.0.0",
     "jquery": "^3.3.1",
-    "nuxt": "^1.0.0-rc3",
+    "nuxt": "^2.15.8",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
