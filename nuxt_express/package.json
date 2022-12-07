@@ -16,7 +16,7 @@
     "axios": "^0.16.2",
     "bootstrap": "^3.3.7",
     "cross-env": "^5.0.1",
-    "express": "^4.15.3",
+    "express": "^4.18.2",
     "font-awesome": "^4.7.0",
     "ionicons": "^3.0.0",
     "jquery": "^3.3.1",
